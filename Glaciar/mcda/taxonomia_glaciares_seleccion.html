@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Taxonomía de Evaluación de Glaciares</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f5f5f5; margin: 20px; }
+        .container { background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .nivel { margin-top: 10px; font-weight: bold; }
+        .criterio { margin-top: 5px; }
+        input[type="checkbox"] { margin-right: 8px; }
+        #taxonomia { display: none; margin-top: 20px; }
+    </style>
+    <script>
+        function toggleTaxonomia() {
+            var section = document.getElementById("taxonomia");
+            var button = document.getElementById("toggleButton");
+            if (section.style.display === "none") {
+                section.style.display = "block";
+                button.textContent = "Ocultar Taxonomía";
+            } else {
+                section.style.display = "none";
+                button.textContent = "Mostrar Taxonomía";
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="container">
+<h2>Taxonomía de Evaluación de Glaciares</h2>
+<button id="toggleButton" onclick="toggleTaxonomia()">Mostrar Taxonomía</button>
+<div id="taxonomia">
+<form>
+<div class='nivel' style='margin-left:0px'><strong>A: Características del Glaciar Padre</strong></div>
+    <div class='nivel' style='margin-left:20px'><strong>A.1: Geometría del Glaciar</strong></div>
+        <div class='nivel' style='margin-left:40px'><strong>A.1.a: Tamaño</strong></div>
+        <div class='criterio' style='margin-left:60px'><label><input type='checkbox' name='criterio' value='Área del Glaciar Padre'> <strong>Área del Glaciar Padre</strong> – <em>Un área mayor puede implicar un mayor volumen de hielo</em></label></div>
+        <div class='criterio' style='margin-left:60px'><label><input type='checkbox' name='criterio' value='Volumen del Glaciar'> <strong>Volumen del Glaciar</strong> – <em>Inferido de 'Área' y 'Espesor'</em></label></div>
+        <div class='criterio' style='margin-left:60px'><label><input type='checkbox' name='criterio' value='Longitud del Glaciar'> <strong>Longitud del Glaciar</strong> – <em>Considerado en la selección de lagos potencialmente peligrosos</em></label></div>
+        <div class='criterio' style='margin-left:60px'><label><input type='checkbox' name='criterio' value='Ancho del Glaciar'> <strong>Ancho del Glaciar</strong> – <em>Considerado en la selección de lagos potencialmente peligrosos</em></label></div>
+        <div class='nivel' style='margin-left:40px'><strong>A.1.b: Morfología y Pendiente</strong></div>
+        <div class='criterio' style='margin-left:60px'><label><input type='checkbox' name='criterio' value='Pendiente de la Lengua del Glaciar'> <strong>Pendiente de la Lengua del Glaciar</strong> – <em>Una pendiente pronunciada puede aumentar la probabilidad de avalanchas de hielo</em></label></div>
+        <div class='criterio' style='margin-left:60px'><label><input type='checkbox' name='criterio' value='Presencia de Grietas (Crevasses)'> <strong>Presencia de Grietas (Crevasses)</strong> – <em>Pueden indicar inestabilidad y ser puntos de desprendimiento de avalanchas</em></label></div>
+    <div class='nivel' style='margin-left:20px'><strong>A.2: Ubicación y Elevación</strong></div>
+    <div class='criterio' style='margin-left:40px'><label><input type='checkbox' name='criterio' value='Elevación del Glaciar Madre'> <strong>Elevación del Glaciar Madre</strong> – <em>Influye en las condiciones climáticas y la tasa de fusión del hielo</em></label></div>
+    <div class='criterio' style='margin-left:40px'><label><input type='checkbox' name='criterio' value='Orientación del Glaciar (Aspecto)'> <strong>Orientación del Glaciar (Aspecto)</strong> – <em>Puede influir en la radiación solar recibida y la tasa de fusión</em></label></div>
+    <div class='nivel' style='margin-left:20px'><strong>A.3: Subsuelo Glaciar</strong></div>
+    <div class='criterio' style='margin-left:40px'><label><input type='checkbox' name='criterio' value='Topografía Subglacial (Bed Topography)'> <strong>Topografía Subglacial (Bed Topography)</strong> – <em>La presencia de sobre-profundizaciones crea sitios favorables para la formación de lagos</em></label></div>
+    <div class='criterio' style='margin-left:40px'><label><input type='checkbox' name='criterio' value='Espesor del Hielo'> <strong>Espesor del Hielo</strong> – <em>Crucial para estimar la topografía subglacial y la posibilidad de formación de depresiones</em></label></div>
+<div class='nivel' style='margin-left:0px'><strong>B: Dinámica y Comportamiento Glaciar</strong></div>
+    <div class='nivel' style='margin-left:20px'><strong>B.1: Estado y Cambios del Glaciar</strong></div>
+    <div class='criterio' style='margin-left:40px'><label><input type='checkbox' name='criterio' value='Retroceso Glaciar'> <strong>Retroceso Glaciar</strong> – <em>Lleva a la formación y expansión de lagos proglaciales</em></label></div>
+    <div class='criterio' style='margin-left:40px'><label><input type='checkbox' name='criterio' value='Avance Glaciar (Surge)'> <strong>Avance Glaciar (Surge)</strong> – <em>Puede bloquear el drenaje y formar lagos represados por hielo</em></label></div>
+    <div class='criterio' style='margin-left:40px'><label><input type='checkbox' name='criterio' value='Tasa de Expansión/Retroceso'> <strong>Tasa de Expansión/Retroceso</strong> – <em>Indica la rapidez de los cambios y el potencial de formación o crecimiento de lagos</em></label></div>
+    <div class='nivel' style='margin-left:20px'><strong>B.2: Procesos Activos</strong></div>
+    <div class='criterio' style='margin-left:40px'><label><input type='checkbox' name='criterio' value='Actividad de Avalanchas de Hielo'> <strong>Actividad de Avalanchas de Hielo</strong> – <em>Pueden alcanzar lagos y desencadenar GLOFs</em></label></div>
+    <div class='criterio' style='margin-left:40px'><label><input type='checkbox' name='criterio' value='Velocidad de Flujo del Glaciar'> <strong>Velocidad de Flujo del Glaciar</strong> – <em>Velocidades extremas pueden indicar inestabilidad</em></label></div>
+    <div class='criterio' style='margin-left:40px'><label><input type='checkbox' name='criterio' value='Fusión del Hielo (Snow/Ice Melt Water)'> <strong>Fusión del Hielo (Snow/Ice Melt Water)</strong> – <em>El aumento puede incrementar el nivel de los lagos y la presión sobre las represas</em></label></div>
+<div class='nivel' style='margin-left:0px'><strong>C: Interacción Glaciar - Lago Glaciar</strong></div>
+    <div class='nivel' style='margin-left:20px'><strong>C.1: Proximidad</strong></div>
+    <div class='criterio' style='margin-left:40px'><label><input type='checkbox' name='criterio' value='Distancia entre el Término del Glaciar y el Lago'> <strong>Distancia entre el Término del Glaciar y el Lago</strong> – <em>Menor distancia aumenta la probabilidad de impacto</em></label></div>
+    <div class='criterio' style='margin-left:40px'><label><input type='checkbox' name='criterio' value='Contacto Glaciar-Lago'> <strong>Contacto Glaciar-Lago</strong> – <em>El contacto directo aumenta la susceptibilidad a GLOFs</em></label></div>
+    <div class='nivel' style='margin-left:20px'><strong>C.2: Conexión</strong></div>
+    <div class='criterio' style='margin-left:40px'><label><input type='checkbox' name='criterio' value='Conexión Hidrológica'> <strong>Conexión Hidrológica</strong> – <em>La existencia de conexión directa influye en la dinámica del lago</em></label></div>
+    <div class='criterio' style='margin-left:40px'><label><input type='checkbox' name='criterio' value='Tipo de Lago Glaciar'> <strong>Tipo de Lago Glaciar</strong> – <em>Proglacial (conectado), desconectado, supraglaciar</em></label></div>
+<div class='nivel' style='margin-left:0px'><strong>D: Susceptibilidad a Desprendimientos de Masa</strong></div>
+    <div class='nivel' style='margin-left:20px'><strong>D.1: Terreno Adyacente</strong></div>
+    <div class='criterio' style='margin-left:40px'><label><input type='checkbox' name='criterio' value='Pendiente del Terreno Circundante al Glaciar/Lago'> <strong>Pendiente del Terreno Circundante al Glaciar/Lago</strong> – <em>Pendientes pronunciadas son fuentes potenciales de avalanchas de roca</em></label></div>
+    <div class='criterio' style='margin-left:40px'><label><input type='checkbox' name='criterio' value='Geología del Terreno Circundante'> <strong>Geología del Terreno Circundante</strong> – <em>Influye en la estabilidad de las laderas</em></label></div>
+    <div class='criterio' style='margin-left:40px'><label><input type='checkbox' name='criterio' value='Presencia de Inestabilidades Previas'> <strong>Presencia de Inestabilidades Previas</strong> – <em>Cicatrices de deslizamientos antiguos</em></label></div>
+    <div class='nivel' style='margin-left:20px'><strong>D.2: Desde el Glaciar</strong></div>
+    <div class='criterio' style='margin-left:40px'><label><input type='checkbox' name='criterio' value='Presencia de Grietas (Crevasses)'> <strong>Presencia de Grietas (Crevasses)</strong> – <em>Enfatizando su rol en desprendimientos</em></label></div>
+<div class='nivel' style='margin-left:0px'><strong>E: Características del Lago Glaciar</strong></div>
+    <div class='nivel' style='margin-left:20px'><strong>E.1: Represa del Lago</strong></div>
+    <div class='criterio' style='margin-left:40px'><label><input type='checkbox' name='criterio' value='Tipo de Represa del Lago'> <strong>Tipo de Represa del Lago</strong> – <em>Morrena, hielo, roca (morrena e hielo tienen mayor riesgo)</em></label></div>
+    <div class='criterio' style='margin-left:40px'><label><input type='checkbox' name='criterio' value='Geometría de la Represa'> <strong>Geometría de la Represa</strong> – <em>Ancho de la cresta, pendiente, longitud</em></label></div>
+    <div class='criterio' style='margin-left:40px'><label><input type='checkbox' name='criterio' value='Material de la Represa'> <strong>Material de la Represa</strong> – <em>Cohesión, permeabilidad (para represas de morrena)</em></label></div>
+    <div class='nivel' style='margin-left:20px'><strong>E.2: Geometría del Lago</strong></div>
+    <div class='criterio' style='margin-left:40px'><label><input type='checkbox' name='criterio' value='Área del Lago Glaciar'> <strong>Área del Lago Glaciar</strong> – <em>Mayor área implica mayor volumen potencial de desbordamiento</em></label></div>
+    <div class='criterio' style='margin-left:40px'><label><input type='checkbox' name='criterio' value='Volumen del Lago Glaciar'> <strong>Volumen del Lago Glaciar</strong> – <em>Directamente relacionado con la magnitud potencial de la inundación</em></label></div>
+    <div class='criterio' style='margin-left:40px'><label><input type='checkbox' name='criterio' value='Profundidad del Lago'> <strong>Profundidad del Lago</strong> – <em>Influye en la estabilidad y la respuesta a impactos</em></label></div>
+    <div class='criterio' style='margin-left:40px'><label><input type='checkbox' name='criterio' value='Nivel de Borde Libre (Freeboard)'> <strong>Nivel de Borde Libre (Freeboard)</strong> – <em>Menor borde libre aumenta el riesgo de desbordamiento</em></label></div>
+<div class='nivel' style='margin-left:0px'><strong>F: Factores Ambientales y de Contexto</strong></div>
+    <div class='nivel' style='margin-left:20px'><strong>F.1: Clima</strong></div>
+    <div class='criterio' style='margin-left:40px'><label><input type='checkbox' name='criterio' value='Temperatura'> <strong>Temperatura</strong> – <em>Aumento acelera la fusión y la inestabilidad</em></label></div>
+    <div class='criterio' style='margin-left:40px'><label><input type='checkbox' name='criterio' value='Precipitación (Nieve y Lluvia)'> <strong>Precipitación (Nieve y Lluvia)</strong> – <em>Lluvias intensas pueden contribuir a la fusión y desencadenar flujos de escombros</em></label></div>
+    <div class='criterio' style='margin-left:40px'><label><input type='checkbox' name='criterio' value='Eventos Climáticos Extremos'> <strong>Eventos Climáticos Extremos</strong> – <em>Olas de calor, tormentas intensas</em></label></div>
+    <div class='nivel' style='margin-left:20px'><strong>F.2: Geodinámica</strong></div>
+    <div class='criterio' style='margin-left:40px'><label><input type='checkbox' name='criterio' value='Actividad Sísmica'> <strong>Actividad Sísmica</strong> – <em>Terremotos pueden desencadenar inestabilidad</em></label></div>
+    <div class='criterio' style='margin-left:40px'><label><input type='checkbox' name='criterio' value='Actividad Tectónica Regional'> <strong>Actividad Tectónica Regional</strong> – <em>Fallas activas cercanas</em></label></div>
+    <div class='nivel' style='margin-left:20px'><strong>F.3: Cambios en el Tiempo</strong></div>
+    <div class='criterio' style='margin-left:40px'><label><input type='checkbox' name='criterio' value='Tasa de Crecimiento del Lago'> <strong>Tasa de Crecimiento del Lago</strong> – <em>Rápida expansión indica mayor peligrosidad</em></label></div>
+    <div class='criterio' style='margin-left:40px'><label><input type='checkbox' name='criterio' value='Cambios en la Masa del Glaciar Padre'> <strong>Cambios en la Masa del Glaciar Padre</strong> – <em>Pérdida de masa puede aumentar la probabilidad de formación de lagos</em></label></div>
+<div class='nivel' style='margin-left:0px'><strong>G: Susceptibilidad del Terreno Aguas Abajo</strong></div>
+    <div class='nivel' style='margin-left:20px'><strong>G.1: Impacto Potencial</strong></div>
+    <div class='criterio' style='margin-left:40px'><label><input type='checkbox' name='criterio' value='Pendiente del Valle Aguas Abajo'> <strong>Pendiente del Valle Aguas Abajo</strong> – <em>Influye en la velocidad y alcance potencial de una inundación</em></label></div>
+    <div class='criterio' style='margin-left:40px'><label><input type='checkbox' name='criterio' value='Presencia de Constricciones o Embalsamientos Naturales'> <strong>Presencia de Constricciones o Embalsamientos Naturales</strong> – <em>Pueden modificar el flujo de la inundación</em></label></div>
+    <div class='criterio' style='margin-left:40px'><label><input type='checkbox' name='criterio' value='Tipo de Suelo y Cobertura Vegetal Aguas Abajo'> <strong>Tipo de Suelo y Cobertura Vegetal Aguas Abajo</strong> – <em>Influyen en la infiltración y la erosión potencial</em></label></div>
+
+</form>
+</div> <!-- Cierre de #taxonomia -->
+</div> <!-- Cierre de .container -->
+</body>
+</html>

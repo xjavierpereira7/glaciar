@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Taxonomía de Glaciares</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    #taxonomiaPanel {
+      margin-top: 20px;
+      background-color: #f9f9f9;
+      border: 1px solid #ccc;
+      padding: 15px;
+      max-height: 400px;
+      overflow-y: auto;
+    }
+
+    #toggleTaxonomia {
+      margin-top: 10px;
+      padding: 8px 12px;
+      background-color: #006837;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h2>Evaluación de Glaciares</h2>
+  <button id="toggleTaxonomia" onclick="toggleTaxonomia()">Mostrar/Ocultar Taxonomía</button>
+
+  <div id="taxonomiaPanel" style="display: none;">
+    <div>{{ taxonomia_html | safe }}</div>
+  </div>
+
+  <script>
+    function toggleTaxonomia() {
+      const panel = document.getElementById("taxonomiaPanel");
+      panel.style.display = panel.style.display === "none" ? "block" : "none";
+    }
+  </script>
+
+</body>
+</html>
