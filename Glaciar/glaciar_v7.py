@@ -147,6 +147,7 @@ def cargar_taxonomia_desde_dict(data):
 
 
 def cargar_taxonomia_desde_yaml(path="mcda/taxonomia_glaciares_completa.yaml"):
+    st.write(f"Intentando abrir: {os.path.abspath(path)}")
     with open(path, 'r', encoding='utf-8') as file:
         data = yaml.safe_load(file)
     return cargar_taxonomia_desde_dict(data)
