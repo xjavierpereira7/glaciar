@@ -146,26 +146,10 @@ def cargar_taxonomia_desde_dict(data):
 
     return f"""<div class="taxonomia-panel"><h2>📖 Taxonomía de Evaluación</h2>{recorrer_nodos(data)}</div>"""
 
-# st.write("🗂 Archivos en Glaciar/:", os.listdir(os.getcwd()))
-def cargar_taxonomia_desde_yaml(path='Glaciar/taxonomia_glaciares_completa.yaml'):
-    carpeta_actual = os.path.dirname(os.path.abspath(__file__))
-    modelo_path = os.path.join(carpeta_actual, "taxonomia_glaciares_completa.yaml")
-    try:
-        ruta_completa = os.path.abspath(modelo_path)
-        st.write(f"Intentando abrir: {ruta_completa}")
-        
-        with open(path, 'r', encoding='utf-8') as file:
-            data = yaml.safe_load(file)
-        return procesar_taxonomia(data)
-    
-    except FileNotFoundError:
-        st.error(f"❌ Archivo no encontrado: {path}")
-        st.stop()
-    
-    except Exception as e:
-        st.error(f"⚠️ Otro error: {str(e)}")
-        st.stop()
-
+def cargar_taxonomia_desde_yaml(path="Glaciar/taxonomia_glaciares_completa.yaml"):
+    with open(path, 'r', encoding='utf-8') as file:
+        data = yaml.safe_load(file)
+    return cargar_taxonomia_desde_dict(data)
 
 # Normalización de los rankings (min-max)
 def normalizar_rankings(ranking):
