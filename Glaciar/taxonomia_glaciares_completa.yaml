@@ -7,16 +7,16 @@ A:
       criterios:
       - nombre: Área del Glaciar Padre
         descripcion: Un área mayor puede implicar un mayor volumen de hielo
-      - nombre: volumen
+      - nombre: Volumen del Glaciar
         descripcion: Inferido de 'Área' y 'Espesor'
       - nombre: Longitud del Glaciar
         descripcion: Considerado en la selección de lagos potencialmente peligrosos
-      - nombre: ancho
+      - nombre: Ancho del Glaciar
         descripcion: Considerado en la selección de lagos potencialmente peligrosos
     A.1.b:
       nombre: Morfología y Pendiente
       criterios:
-      - nombre: pendiente
+      - nombre: Pendiente de la Lengua del Glaciar
         descripcion: Una pendiente pronunciada puede aumentar la probabilidad de avalanchas
           de hielo
       - nombre: Presencia de Grietas (Crevasses)
@@ -65,7 +65,7 @@ C:
   C.1:
     nombre: Proximidad
     criterios:
-    - nombre: proximidad_lago
+    - nombre: Distancia entre el Término del Glaciar y el Lago
       descripcion: Menor distancia aumenta la probabilidad de impacto
     - nombre: Contacto Glaciar-Lago
       descripcion: El contacto directo aumenta la susceptibilidad a GLOFs
