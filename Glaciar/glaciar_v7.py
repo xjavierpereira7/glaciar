@@ -1,3 +1,4 @@
+import os
 import joblib
 import streamlit as st
 import pandas as pd
@@ -146,11 +147,23 @@ def cargar_taxonomia_desde_dict(data):
     return f"""<div class="taxonomia-panel"><h2>📖 Taxonomía de Evaluación</h2>{recorrer_nodos(data)}</div>"""
 
 
-def cargar_taxonomia_desde_yaml(path="mcda/taxonomia_glaciares_completa.yaml"):
-    st.write(f"Intentando abrir: {os.path.abspath(path)}")
-    with open(path, 'r', encoding='utf-8') as file:
-        data = yaml.safe_load(file)
-    return cargar_taxonomia_desde_dict(data)
+def cargar_taxonomia_desde_yaml(path='mcda/taxonomia_glaciares_completa.yaml'):
+    try:
+        ruta_completa = os.path.abspath(path)
+        st.write(f"Intentando abrir: {ruta_completa}")
+        
+        with open(path, 'r', encoding='utf-8') as file:
+            data = yaml.safe_load(file)
+        return procesar_taxonomia(data)
+    
+    except FileNotFoundError:
+        st.error(f"❌ Archivo no encontrado: {path}")
+        st.stop()
+    
+    except Exception as e:
+        st.error(f"⚠️ Otro error: {str(e)}")
+        st.stop()
+
 
 # Normalización de los rankings (min-max)
 def normalizar_rankings(ranking):
