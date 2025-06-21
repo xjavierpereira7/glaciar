@@ -11,42 +11,6 @@ import os
 import streamlit as st
 
 
-# # Cargar el archivo CSV especificando que el delimitador es punto y coma (;)
-# df = pd.read_csv('ranking_promethee.csv', sep=';')
-#
-# # Limpiar los nombres de las columnas
-# df.columns = df.columns.str.strip()
-#
-# # Verificar las columnas después de limpiarlas
-# print("Columnas después de limpiar espacios:", df.columns)
-#
-# # Selección de las columnas relevantes para las características
-# X = df[['pendiente', 'volumen', 'proximidad_lago', 'ancho']]  # Características
-# y = df['ranking'].values  # El ranking como objetivo
-#
-# # Verificar el contenido de X y y
-# print("Datos de entrada (X):")
-# print(X.head())  # Muestra las primeras filas de las características
-# print("Datos de salida (y):")
-# print(y[:5])  # Muestra las primeras 5 filas de los rankings
-# # Escalamiento de las características
-# scaler = StandardScaler()
-# X_scaled = scaler.fit_transform(X)  # Escalar las características
-#
-# # Verificar que X_scaled tenga la forma correcta
-# print("Datos escalados (X_scaled):")
-# print(X_scaled[:5])  # Muestra las primeras 5 filas escaladas
-#
-# # Crear y entrenar el modelo de red neuronal
-# mlp = MLPRegressor(hidden_layer_sizes=(50, 50), max_iter=1000, random_state=42)
-# mlp.fit(X_scaled, y)
-#
-# # Guardar el modelo y el escalador
-# # joblib.dump({'scaler': scaler, 'mlp': mlp}, 'modelo_phi_mlp.pkl')
-# joblib.dump((mlp, scaler), 'modelo_phi_mlp.pkl')
-#
-# print("Modelo entrenado y guardado como 'modelo_phi_mlp.pkl'")
-
 
 # ======= MODULOS PARA IA =========================
 def guardar_evaluacion_para_entrenamiento(df_glaciares, ranking, archivo):
@@ -83,7 +47,7 @@ def predecir_con_red_neuronal(data, criterios, modelo_path):
         return None
 
     data_df = pd.DataFrame(data, columns=criterios)
-    model, scaler = joblib.load("modelo_phi_mlp.pkl")
+    model, scaler = joblib.load(modelo_path)
     data_scaled = scaler.transform(data_df)
     ranking = model.predict(data_scaled)
 
