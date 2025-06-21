@@ -146,7 +146,7 @@ def cargar_taxonomia_desde_dict(data):
 
     return f"""<div class="taxonomia-panel"><h2>📖 Taxonomía de Evaluación</h2>{recorrer_nodos(data)}</div>"""
 
-
+st.write("🗂 Archivos en Glaciar/:", os.listdir(os.getcwd()))
 def cargar_taxonomia_desde_yaml(path='taxonomia_glaciares_completa.yaml'):
     carpeta_actual = os.path.dirname(os.path.abspath(__file__))
     modelo_path = os.path.join(carpeta_actual, "taxonomia_glaciares_completa.yaml")
