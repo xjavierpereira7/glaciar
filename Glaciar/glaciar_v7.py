@@ -148,6 +148,8 @@ def cargar_taxonomia_desde_dict(data):
 
 
 def cargar_taxonomia_desde_yaml(path='taxonomia_glaciares_completa.yaml'):
+    st.write("Archivos disponibles en carpeta actual:")
+    st.write(os.listdir('.'))    
     try:
         ruta_completa = os.path.abspath(path)
         st.write(f"Intentando abrir: {ruta_completa}")
