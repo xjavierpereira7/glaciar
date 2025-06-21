@@ -146,7 +146,7 @@ def cargar_taxonomia_desde_dict(data):
     return f"""<div class="taxonomia-panel"><h2>📖 Taxonomía de Evaluación</h2>{recorrer_nodos(data)}</div>"""
 
 
-def cargar_taxonomia_desde_yaml(path=path="mcda/taxonomia_glaciares_completa.yaml"):
+def cargar_taxonomia_desde_yaml(path="mcda/taxonomia_glaciares_completa.yaml"):
     with open(path, 'r', encoding='utf-8') as file:
         data = yaml.safe_load(file)
     return cargar_taxonomia_desde_dict(data)
