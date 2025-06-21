@@ -4,6 +4,7 @@ import numpy as np
 import pandas as pd
 import joblib
 import streamlit as st
+import os
 
 from prometheeII import promethee_matrix
 from todim import todim_matrix
@@ -41,8 +42,10 @@ def evaluar_metodo_mcda(metodo, data, criterios, pesos, q_vals=None, p_vals=None
 
     elif metodo == "Red Neuronal":
         try:
+            carpeta_actual = os.path.dirname(os.path.abspath(__file__))
+            modelo_path = os.path.join(carpeta_actual, "modelo_phi_mlp.pkl")
             data_df = pd.DataFrame(data, columns=criterios)
-            model, scaler = joblib.load("modelo_phi_mlp.pkl")
+            model, scaler = joblib.load(modelo_path)
             data_scaled = scaler.transform(data_df)
             ranking = model.predict(data_scaled)
             # ranking = predecir_con_red_neuronal(data, 'modelo_phi_mlp.pkl')
