@@ -11,4 +11,4 @@ joblib
 scikit-learn
 statsmodels
 shapely
-# geopandas  ← Descomenta solo si configuramos dependencias del sistema
+geopandas
