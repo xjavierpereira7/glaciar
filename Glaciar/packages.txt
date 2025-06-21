@@ -1,0 +1,5 @@
+gdal-bin
+python3-gdal
+python3-rtree
+libgdal-dev
+libspatialindex-dev
